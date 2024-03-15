@@ -28,7 +28,6 @@ jobs:
         run: |
           pwd
           tree
-          cd ${{ github.workspace }}
           make build-deb
           make copy-dpkg-output
           tree dist-deb
