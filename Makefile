@@ -33,6 +33,11 @@ flush:: ## remove generated files
 	rm -f debian/helloart.*
 	rm -f debian/files debian/debhelper-build-stamp
 	rm -Rf helloart/__pycache__
+	rm -Rf dist-deb
+
+copy-dpkg-output:: ## copies the built files from building deb package
+	mkdir -p dist-deb
+	cp -v ../helloart_*_amd64.* ./dist-deb/
 
 docker-build:: ## builds the docker image locally
 	@docker build  \
@@ -74,9 +79,15 @@ install:: ## installs with pip
 	pip install .
 	@#python setup.py install  ## avoid using
 
+install-deb:: ## installs the built deb package
+	dpkg -i ../helloart_0.1.0_amd64.deb
+
 uninstall:: ## uninstalls with pip
 	pip uninstall -y -r requirements.txt
 	pip uninstall -y helloart
+
+uninstall-deb:: ## uninstalls the deb package
+	apt remove helloart
 
 upgrade:: ## upgrades with pip
 	pip install --upgrade -r requirements.txt
