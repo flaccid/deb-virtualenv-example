@@ -11,7 +11,15 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes(text2art("Hello, world!"), 'utf-8'))
 
-if __name__ == "__main__":
-    httpd = HTTPServer(('', port), SimpleHTTPRequestHandler)
-    print(f"serving on port {port}")
+
+def Serve():
+    httpd = HTTPServer((host, port), SimpleHTTPRequestHandler)
+    print(f"server listening on {host}:{port}")
     httpd.serve_forever()
+
+
+def main():
+    Serve()
+
+if __name__ == "__main__":
+    main()

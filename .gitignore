@@ -1,0 +1,9 @@
+__pycache__
+build/
+dist/
+.debhelper
+*.egg-info
+debian/helloart
+debian/helloart.*
+debian/files
+debian/debhelper-build-stamp

@@ -20,7 +20,7 @@ setuptools.setup(
     ],
     entry_points={
         "gui_scripts": [
-            "helloart = serve:main",
+            "helloart = helloart.serve:main",
         ]
     },
     python_requires='>=3.5',

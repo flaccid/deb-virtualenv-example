@@ -9,7 +9,7 @@ Homepage: https://github.com/flaccid/deb-virtualenv-example
 Package: helloart
 Architecture: any
 Pre-Depends: dpkg (>= 1.16.1), python3, python3-venv, ${misc:Pre-Depends}
-Depends: ${python:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}
 Description: hello world with the art package
     .
     This is a distribution of "helloart" as a self-contained
