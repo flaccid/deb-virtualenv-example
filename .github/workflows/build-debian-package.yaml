@@ -3,9 +3,9 @@ run-name: Build helloart Debian package by ${{ github.actor }}
 on: [push]
 jobs:
   build:
+    runs-on: ubuntu-latest
     container:
       image: debian:bookworm
-    #runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
