@@ -36,3 +36,14 @@ jobs:
         with:
           name: helloart-debian-package
           path: dist-deb/helloart_0.1.0_amd64.deb
+      - name: Create github release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          omitName: true
+          omitBody: true
+          omitBodyDuringUpdate: true
+          prerelease: true
+          tag: "latest"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "dist-deb/helloart_0.1.0_amd64.deb"
