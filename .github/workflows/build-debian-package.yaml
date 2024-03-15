@@ -26,6 +26,8 @@ jobs:
             tree
       - name: Build debian package
         run: |
+          pwd
+          tree
           cd ${{ github.workspace }}
           make build-deb
           make copy-dpkg-output
